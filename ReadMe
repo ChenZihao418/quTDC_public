@@ -1,0 +1,18 @@
+这是qutools公司TDC的matlab程序，由ChenZihao编写。
+该版本于2022年12月6日更新，版本号为1.1.0，
+遇到问题请联系zihao9571@163.com
+
+
+使用时请将整个文件夹里的文件复制到程序当中。
+文件夹中有三个matlab程序，分别是TDCconnect，getTimestamps，TDCdisconnect。这三个文件依靠FTD3XX.dll，libusb0.dll，tdcbase.dll文件才能正常运行。
+
+TDCconnect的主要功能是连接TDC，设置触发电压。TDC的触发电压在不设置时为1V。该函数的使用方法是
+TDCconnect（Start通道的触发电压，1通道的触发电压，2通道的触发电压，3通道的触发电压，4通道的触发电压）
+例如：TDCconnect（0.1,0.1,0.1,0.1,0.1）%将TDC触发电压设置成0.1V。
+
+getTimestamps的主要功能是读取TDC采集到的的时间标签。该函数的使用方法是
+timetag = getTimestamps；
+timetag是TDC采集到的时间标签，该函数没有任何输入。
+
+TDCdisconnect的主要功能是断开TDC的连接，一般用不上。该函数的使用方法是：
+TDCdisconnect;
